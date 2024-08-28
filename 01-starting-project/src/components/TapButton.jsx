@@ -1,7 +1,7 @@
-const TapButton = ({ children }) => {
+const TapButton = ({ children, onClick }) => {
   return (
     <li>
-      <button>{children}</button>
+      <button onClick={onClick}>{children}</button>
     </li>
   );
 };
