@@ -1,7 +1,7 @@
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header";
 import CoreConcepts from "./components/CoreConcepts";
-
+import TapButton from "./components/TapButton";
 function App() {
   return (
     <div>
@@ -21,6 +21,14 @@ function App() {
           </ul>
         </section>
         <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TapButton>Components</TapButton>
+            <TapButton>JSX</TapButton>
+            <TapButton>Props</TapButton>
+            <TapButton>State</TapButton>
+          </menu>
+        </section>
       </main>
     </div>
   );
