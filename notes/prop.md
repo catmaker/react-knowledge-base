@@ -105,3 +105,43 @@ type 설정이 된 경우:
 export default function Button({ caption, type = "submit" }) {
 // caption has no default value, type has a default value of "submit"
 }
+
+# children Prop
+
+React에서 children prop은 특별한 prop이다.
+
+이는 컴포넌트의 여는 태그와 닫는 태그 사이에 있는 모든 내용을 나타낸다.
+
+children prop의 주요 특징은 다음과 같다:
+
+1. 자동 전달: 컴포넌트에 명시적으로 전달하지 않아도 React가 자동으로 처리한다.
+
+2. 유연성: 문자열, 숫자, JSX, 다른 컴포넌트 등 다양한 타입의 데이터를 포함할 수 있다.
+
+3. 재사용성: 컴포넌트의 구조를 유지하면서 내용을 동적으로 변경할 수 있어 재사용성이 높다.
+
+사용 예시:
+
+<Button>Click me</Button>
+
+이 컴포넌트는 다음과 같이 정의될 수 있다:
+
+export default function Button({ children, type = "submit" }) {
+return <button type={type}>{children}</button>;
+}
+
+children prop을 사용하여 컴포넌트의 내용을 동적으로 변경할 수 있다.
+
+## children 과 attributes
+
+React 컴포넌트에서 내용을 전달하는 방법으로 children prop과 일반 attributes를 모두 사용할 수 있다. 두 방법 모두 유효하며, 상황에 따라 적절한 방법을 선택할 수 있다.
+
+1. children prop 사용:
+   <Button>Click me</Button>
+
+2. attributes 사용:
+   <Button text="Click me" />
+
+어떤 방법을 선택할지는 컴포넌트의 설계와 사용 목적에 따라 달라진다. children prop은 더 유연하고 복잡한 내용을 전달할 때 유용하며, attributes는 간단한 데이터를 전달할 때 더 명시적이고 직관적일 수 있다.
+
+두 방법을 혼합하여 사용할 수도 있으며, 팀의 코딩 컨벤션과 프로젝트의 일관성을 고려하여 선택하는 것이 좋다.
