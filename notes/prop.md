@@ -145,3 +145,25 @@ React 컴포넌트에서 내용을 전달하는 방법으로 children prop과 �
 어떤 방법을 선택할지는 컴포넌트의 설계와 사용 목적에 따라 달라진다. children prop은 더 유연하고 복잡한 내용을 전달할 때 유용하며, attributes는 간단한 데이터를 전달할 때 더 명시적이고 직관적일 수 있다.
 
 두 방법을 혼합하여 사용할 수도 있으며, 팀의 코딩 컨벤션과 프로젝트의 일관성을 고려하여 선택하는 것이 좋다.
+
+## forwarded props or proxy props
+
+React에서 forwarded props 또는 proxy props는 컴포넌트가 받은 props를 다른 컴포넌트로 전달하는 기술을 말한다. 이 방법은 컴포넌트의 재사용성과 유연성을 높이는 데 도움이 된다.
+
+주요 특징:
+
+1. prop 전달: 상위 컴포넌트에서 받은 props를 하위 컴포넌트로 그대로 전달한다.
+
+2. 코드 간소화: 많은 props를 일일이 나열하지 않고도 전체 props를 전달할 수 있다.
+
+3. 유연성: 컴포넌트가 어떤 props를 받을지 미리 정의하지 않아도 된다.
+
+사용 예시:
+
+function Button({ children, ...rest }) {
+return <button {...rest}>{children}</button>;
+}
+
+<Button>Click me</Button>
+
+이 예시에서 Button 컴포넌트는 forwarded props를 사용하여 받은 props를 그대로 전달한다. 이렇게 하면 Button 컴포넌트를 사용할 때 모든 props를 일일이 나열하지 않아도 된다.

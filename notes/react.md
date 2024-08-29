@@ -98,3 +98,41 @@
 
 8. 훅은 부수 효과를 포함할 수 있지만, 렌더링 중에 부수 효과를 발생시켜서는 안 된다.
    - 부수 효과는 useEffect나 useLayoutEffect 내에서 처리해야 한다.
+
+# JSX를 사용하는 이유
+
+JSX는 React에서 UI를 구성하는 데 사용되는 JavaScript의 확장 문법이다. JSX를 사용하는 주요 이유는 다음과 같다:
+
+1. 가독성과 작성 용이성:
+   - JSX는 HTML과 유사한 구문을 사용하여 UI 구조를 직관적으로 표현한다.
+   - React.createElement()를 직접 사용하는 것보다 JSX가 더 읽기 쉽고 작성하기 편하다.
+
+   예시:
+   JSX:
+   ```jsx
+   const element = <h1 className="greeting">Hello, world!</h1>;
+   ```
+   React.createElement():
+   ```javascript
+   const element = React.createElement(
+     'h1',
+     {className: 'greeting'},
+     'Hello, world!'
+   );
+   ```
+
+2. 구조의 명확성:
+   - JSX는 컴포넌트의 구조를 시각적으로 더 명확하게 표현한다.
+   - 중첩된 요소나 복잡한 구조를 React.createElement()로 표현하면 코드가 복잡해지고 이해하기 어려워진다.
+
+3. JavaScript 표현식 통합:
+   - JSX 내에서 중괄호 {}를 사용하여 JavaScript 표현식을 쉽게 삽입할 수 있다.
+   - 이는 동적 데이터를 UI에 쉽게 통합할 수 있게 해준다.
+
+4. 컴파일 시 오류 검출:
+   - JSX는 컴파일 과정에서 구문 오류를 잡아낼 수 있어, 런타임 오류를 줄일 수 있다.
+
+5. 개발 도구 지원:
+   - 많은 IDE와 개발 도구들이 JSX를 지원하여 자동 완성, 문법 강조 등의 기능을 제공한다.
+
+결론적으로, JSX는 React.createElement()를 직접 사용하는 것보다 더 직관적이고 효율적인 방법으로 UI를 구성할 수 있게 해준다.
